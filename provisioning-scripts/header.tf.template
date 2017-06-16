@@ -1,0 +1,13 @@
+
+resource "aws_instance" "#INSTANCE-NAME#" {
+  ami           = "ami-b14ba7a7"
+  availability_zone = "us-east-1a"
+  instance_type = "t2.micro"
+  key_name = "terraform"
+
+  # Our Security group to allow HTTP and SSH access
+  vpc_security_group_ids = ["${aws_security_group.default.id}"]
+
+  subnet_id = "${aws_subnet.default.id}"
+
+

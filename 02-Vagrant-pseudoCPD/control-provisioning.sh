@@ -1,0 +1,1 @@
+../provisioning-scripts/control-provisioning.sh

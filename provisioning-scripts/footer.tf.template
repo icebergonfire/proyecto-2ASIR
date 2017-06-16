@@ -1,0 +1,6 @@
+  connection {
+    type     = "ssh"
+    user     = "admin"
+    private_key = "${file("${var.provisioning-folder}/provisioning-key")}"
+  }
+}

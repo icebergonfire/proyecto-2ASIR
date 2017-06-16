@@ -1,0 +1,15 @@
+  provisioner "file" {
+    source = "${var.provisioning-folder}/"
+    destination = "/tmp/vagrant"
+  }
+  
+  provisioner "remote-exec" {
+    scripts = [
+      "${var.provisioning-folder}/cloud-vagrant-glue.sh",
+      "${var.provisioning-folder}/base-provisioning.sh",
+      "${var.provisioning-folder}/apache2-provisioning.sh",
+      "${var.provisioning-folder}/nagios-client.sh"
+    ]
+  }
+
+

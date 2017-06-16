@@ -1,0 +1,1 @@
+../provisioning-scripts/ddclient-provisioning.sh

@@ -1,0 +1,1 @@
+../provisioning-scripts/autoNodeScan-provisioning.sh

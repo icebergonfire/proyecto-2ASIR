@@ -1,0 +1,16 @@
+	config.vm.define :#MAIN# do | #MAIN# |
+	  #MAIN#.vm.box = "debian/jessie64"
+	  #MAIN#.vm.network :public_network,:mac => "080027999238", bridge: "enp0s25", ip: "192.168.0.4"
+	  #MAIN#.vm.hostname = "#MAIN#"
+	  #MAIN#.vm.provision "shell", inline: <<-SHELL
+		/vagrant/base-provisioning.sh
+		/vagrant/control-provisioning.sh
+		/vagrant/haproxy-provisioning.sh
+		/vagrant/nagios-server.sh
+		/vagrant/autoNodeScan-provisioning.sh
+		/vagrant/ddclient-provisioning.sh
+		/bin/update-dns.sh
+		sudo chmod +x /vagrant/init-to-the-cloud.sh
+		sudo cp /vagrant/init-to-the-cloud.sh /bin/
+	SHELL
+	end

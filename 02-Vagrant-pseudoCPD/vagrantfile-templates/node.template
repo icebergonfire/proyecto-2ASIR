@@ -1,0 +1,11 @@
+	config.vm.define :#NODE# do | #NODE# |
+	  #NODE#.vm.box = "debian/jessie64"
+	  #NODE#.vm.hostname = "#NODE#"
+	  #NODE#.vm.network :public_network, bridge: "enp0s25", type: "dhcp"
+	  #NODE#.vm.provision "shell", inline: <<-SHELL
+		/vagrant/base-provisioning.sh
+		/vagrant/apache2-provisioning.sh
+		/vagrant/nagios-client.sh
+	SHELL
+	end
+

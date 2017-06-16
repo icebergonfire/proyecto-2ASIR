@@ -1,0 +1,1 @@
+../provisioning-scripts/remove-node.sh

@@ -1,0 +1,1 @@
+../provisioning-scripts/update-dns.sh

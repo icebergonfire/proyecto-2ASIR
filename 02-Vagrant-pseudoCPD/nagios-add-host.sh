@@ -1,0 +1,1 @@
+../provisioning-scripts/nagios-add-host.sh
